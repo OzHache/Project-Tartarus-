@@ -5,8 +5,6 @@ using UnityEngine;
 public class BoatRow : MonoBehaviour
 {
     [SerializeField] Rigidbody rb;
-    public Vector3 applyForce = Vector3.zero;
-    public float maxDistance = 3f;
     [Range(.1f,50f)]public float rowStrength = 1;
     // Start is called before the first frame update
     void Start()
@@ -30,18 +28,13 @@ public class BoatRow : MonoBehaviour
     }
     void ApplyRow(bool rowing, Vector3 direction)
     {
-        if (!rowing)
+        if (rowing)
         {
-            applyForce = Vector3.zero;
+            rb.velocity = transform.right * (direction.z * rowStrength);
         }
-        else
+        if(direction.x != 0)
         {
-
-            Vector3 force = (direction * rowStrength);
-            //applyForce = Vector3.ClampMagnitude(force, maxDistance);
-            rb.velocity = transform.right *direction.z;
-            
+            gameObject.SendMessage("ChangeSpeed", direction.x);
         }
-                
     }
 }

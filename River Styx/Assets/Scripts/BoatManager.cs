@@ -18,6 +18,5 @@ public class BoatManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        boatMovement.Move(boatRow.applyForce);
     }
 }
