@@ -65,8 +65,5 @@ public class BoatTravel : MonoBehaviour
             navMeshAgent.speed = speed + (2*speedModifier)+1;
         }
 
-
-
-
     }
 }

@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/SampleScene.unity
+- path: Assets/Scenes/Block_out_GAM651.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
